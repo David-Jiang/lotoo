@@ -5,13 +5,18 @@
   "author": "David",
   "private": true,
   "scripts": {
+    "format": "prettier --write 'src/**/*.{js,vue}'",
     "start": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "build": "node build/build.js",
-    "format": "prettier --write 'src/**/*.{js,vue}'"
+    "build-vue": "node build/build.js",
+    "build-image": "docker build -t nanwork0914/lotto:latest .",
+    "build": "npm run build-vue && npm run build-image"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
+    "iview": "^3.5.3",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
     "vue": "^2.5.2"
   },
   "devDependencies": {
@@ -23,6 +28,7 @@
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-plugin-transform-vue-jsx": "^3.5.0",
     "babel-preset-env": "^1.3.2",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",

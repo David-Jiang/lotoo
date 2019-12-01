@@ -1,0 +1,12 @@
+{
+  "name": "lotto",
+  "version": "1.0.0",
+  "description": "lotto example",
+  "author": "David",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}

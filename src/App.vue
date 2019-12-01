@@ -1,24 +1,25 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+  <div id="app" v-cloak>
+    <div class="container">
+      <Home />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Home from "@/components/Home"
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
+    Home,
+  },
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
