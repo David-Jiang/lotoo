@@ -7,9 +7,8 @@
   "scripts": {
     "format": "prettier --write 'src/**/*.{js,vue}'",
     "start": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "build-vue": "node build/build.js",
+    "build": "node build/build.js",
     "build-server": "babel index.js --out-file server.js",
-    "build": "npm run build-vue && npm run build-server",
     "start-server": "nodemon index.js --exec babel-node"
   },
   "dependencies": {
