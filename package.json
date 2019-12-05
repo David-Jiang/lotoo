@@ -8,8 +8,9 @@
     "format": "prettier --write 'src/**/*.{js,vue}'",
     "start": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "build-vue": "node build/build.js",
-    "build-image": "docker build -t nanwork0914/lotto:latest .",
-    "build": "npm run build-vue && npm run build-image"
+    "build-server": "babel index.js --out-file server.js",
+    "build": "npm run build-vue && npm run build-server",
+    "start-server": "nodemon index.js --exec babel-node"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.1",
@@ -38,6 +40,7 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
     "node-notifier": "^5.1.2",
+    "nodemon": "^2.0.1",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
     "portfinder": "^1.0.13",
