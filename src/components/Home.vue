@@ -61,12 +61,11 @@ export default {
       this.$http
         .get("/getLottoList", { params })
         .then(response => {
-          let data = JSON.parse(response.data)
-          if (data.errorMsg) {
-            return Promise.reject(data.errorMsg)
+          if (response.data.errorMsg) {
+            return Promise.reject(response.data.errorMsg)
           }
-          this.lottoFrequencyList = data.lottoFrequencyList
-          this.lottoPairList = data.lottoPairList
+          this.lottoFrequencyList = response.data.lottoFrequencyList
+          this.lottoPairList = response.data.lottoPairList
         })
         .catch(error => {
           console.log(String(error))
