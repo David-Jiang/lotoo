@@ -8,8 +8,21 @@
         </div>
         <button type="submit" class="btn btn-primary" @click="submit">送出</button>
       </div>
+      <div class="col-sm-12" v-if="lottoPairList.length > 0">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">各組號碼</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(lottoPair, index) in lottoPairList" :key="index">
+              <td>{{ lottoPair }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div class="col-sm-12" v-if="lottoFrequencyList.length > 0">
-        <h4 style="margin-bottom:5px">出現頻率</h4>
         <table class="table table-hover">
           <thead>
             <tr>
@@ -21,21 +34,6 @@
             <tr v-for="(lottoItem, index) in lottoFrequencyList" :key="index">
               <td>{{ lottoItem.lottoNumber }}</td>
               <td>{{ lottoItem.frequency }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-sm-12" v-if="lottoPairList.length > 0">
-        <h4 style="margin-bottom:5px">各組號碼清單</h4>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">各組號碼</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(lottoPair, index) in lottoPairList" :key="index">
-              <td>{{ lottoPair }}</td>
             </tr>
           </tbody>
         </table>
@@ -75,4 +73,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.col-sm-12 {
+  margin-bottom: 15px;
+}
+</style>
